@@ -11,6 +11,8 @@ import {FiGithub, FiLinkedin} from "react-icons/fi";
 import { useTheme } from "../../context/ThemeContext";
 
 import PROFILE_PIC from "../../assets/images/profile_pic.jpg";
+import { containerVariant , itemVariants } from "../../utils/helper";
+import TypewriterText from "../../context/TypewriterText";
 
 const HeroSection = () => {
     const { isDarkMode } = useTheme();
@@ -23,29 +25,6 @@ const HeroSection = () => {
         if(element) {
             element.scrollIntoView({behavior:"smooth"});
         }
-    };
-
-    const containerVariant = {
-        hidden: {opacity:0},
-        visible: {
-            opacity:1,
-            transition: {
-                staggerChildren:0.2,
-                delayChildren:0.3,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: {y:30,opacity:0},
-        visible:{
-            y:0,
-            opacity:1,
-            transition:{
-                duration:0.8,
-                ease:"easeOut",
-            },
-        },
     };
 
     const textVariants = {
@@ -75,7 +54,7 @@ const HeroSection = () => {
   return (
     <div 
     className={`min-h-screen transition-all duration-500 ${
-        isDarkMode ? "bg-gray-950 text-white" : "bg-gray-50 text-gray-900"
+        isDarkMode ? "bg-gray-950 text-white" : "bg-gradient-to-r from-green-200 via-lime-100 to-green-200 text-gray-900"
     }`}
     >
         {/* Hero Section */}
@@ -95,8 +74,8 @@ const HeroSection = () => {
                         repeat: Infinity,
                         ease:"linear",
                     }}
-                    className={`absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl opacity-10 ${
-                        isDarkMode ? "bg-blue-500" : "bg-blue-400"
+                    className={`absolute top-20 right-20 w-64 h-64 rounded-full blur-3xl  ${
+                        isDarkMode ? "opacity-10 bg-blue-500" : " opacity-20 bg-blue-400"
                     }`}
                     />
                     <motion.div
@@ -122,23 +101,11 @@ const HeroSection = () => {
                                 initial="hidden"
                                 animate="visible"
                                 variants={containerVariant}
-                                className=""
+                                className="text-center"
                                 >
                                     {/* Profile Image - Mobile */}
-                                    <motion.div variants={imageVariants} className="">
+                                    <motion.div variants={imageVariants} className="mb-8">
                                         <div className="w-32 h-32 mx-auto relative">
-                                            <motion.div
-                                            whileHover={{scale: 1.05}}
-                                            className={`w-full h-32 rounded-2xl overflow-hidden border-4 ${
-                                                isDarkMode ? "border-gray-800" : "border-gray-300"
-                                            } shadow-2xl`}
-                                            >
-                                                <img
-                                                    src={PROFILE_PIC}
-                                                    alt="Profile"
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </motion.div>
                                             {/* Decorative ring */}
                                             <motion.div
                                                 animate={{rotate: 360}}
@@ -149,18 +116,39 @@ const HeroSection = () => {
                                                 }}
                                                 className="absolute -inset-2 rounded-2xl border border-blue-500/20"
                                             />
+                                            <motion.div
+                                            whileHover={{scale: 1.05}}
+                                            transition={{duration:1}}
+                                            className={`w-full h-32 rounded-2xl overflow-hidden border-4 z-10 relative active:scale-105 duration-300 ${
+                                                isDarkMode ? "border-gray-800" : "border-gray-300"
+                                            } shadow-2xl`}
+                                            >
+                                                <img
+                                                    src={PROFILE_PIC}
+                                                    alt="Profile Pic 😊"
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </motion.div>
+                                            
                                             </div>
                                             </motion.div>
 
                                             {/* Content-Mobile */}
-                                            <motion.div
+                                            {/* <motion.div
                                                 variants={textVariants}
                                                 className={`text-sm text-center uppercase tracking-widest mt-7 ${
                                                     isDarkMode ? "text-gray-500" : "text-gray-600"
                                                 } mb-4`}
                                                 >
                                                     Full Stack Developer
-                                                </motion.div>
+                                                </motion.div> */}
+
+                                                <motion.div
+                                                    variants={itemVariants}
+                                                    className=" text-3xl font-semibold text-center mb-2 "
+                                                    >
+                                                        Hi, I'm Ashwin 
+                                                    </motion.div>
 
                                                 <motion.h1
                                                     variants={itemVariants}
@@ -171,7 +159,7 @@ const HeroSection = () => {
                                                     >
                                                         Building Digital
                                                     </span>
-                                                    <span className="text-blue-500 font-medium ml-2">
+                                                    <span className="bg-gradient-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent font-medium ml-2">
                                                         experiences
                                                     </span>
                                                     <br/>
@@ -180,14 +168,26 @@ const HeroSection = () => {
                                                     </span>
                                                 </motion.h1>
 
-                                                <motion.p
+                                                {/* <motion.p
                                                     variants={itemVariants}
                                                     className={`text-base text-center md:text-lg ${
                                                         isDarkMode ? "text-gray-400" : "text-gray-600"
                                                     } mb-8 max-w-xl mx-auto font-light leading-relaxed`}
                                                 >
                                                     I craft beautiful, funtional web applications and modern technologies and thoughtful use experiences.
-                                                </motion.p>
+                                                </motion.p> */}
+
+                                                <motion.div
+                                                variants={itemVariants}
+                                                className={` text-sm text-center mb-5 ${
+                                                    isDarkMode ? "text-white" : "text-gray-600"
+                                                }`}
+                                                >
+                                                    <TypewriterText />
+                                                </motion.div>
+                                                
+                                                
+
 
                                                 {/* CTA buttons-mobile */}
                                                 <motion.div 
@@ -200,8 +200,8 @@ const HeroSection = () => {
                                                         onClick={() => scrollToSection("work")}
                                                         className={` ${
                                                             isDarkMode
-                                                            ? "bg-gradient-to-br from-violet-500/40 to-orange-500  text-white px-8 py-3 rounded-full text-sm shadow-md hover:shadow-violet-500/40 uppercase tracking-wider font-medium duration-300 transition-all  cursor-pointer"
-                                                            : "bg-gradient-to-br from-violet-500/70 to-orange-500  text-white px-8 py-3 rounded-full text-sm shadow-md hover:shadow-violet-500/40 uppercase tracking-wider font-medium duration-300 transition-all  cursor-pointer"
+                                                            ? "bg-gradient-to-br from-violet-500/40 to-orange-500  text-white px-8 py-3 rounded-full text-sm hover:shadow-sm hover:shadow-violet-500/40 uppercase tracking-wider font-medium duration-300 transition-all  cursor-pointer"
+                                                            : "bg-gradient-to-br from-violet-500/70 to-orange-500  text-white px-8 py-3 rounded-full text-sm hover:shadow-md hover:shadow-violet-500/40 uppercase tracking-wider font-medium duration-300 transition-all  cursor-pointer"
                                                         }`}
                                                     >
                                                         View Work
@@ -226,15 +226,17 @@ const HeroSection = () => {
                                                     className="flex justify-center space-x-6 mb-8"
                                                 >
                                                     {[
-                                                        {icon: FiGithub,href:"#"},
-                                                        {icon: FiLinkedin,href:"#"},
-                                                        {icon: Mail,href:"#"}
+                                                        {icon: FiGithub,href:"https://github.com/Ashwin-RH",target:"_blank"},
+                                                        {icon: FiLinkedin,href:"https://linkedin.com/in/ashwin-rh-aa263b217",target:"_blank"},
+                                                        {icon: Mail,href:"mailto:ashwinharagi@gmail.com"}
                                                     ].map((social,index)=> (
                                                         <motion.a
                                                             key={index}
                                                             href={social.href}
+                                                            target={social.target || "_self"}
+                                                            rel={social.target === "blank" ? "noopener noreferrer" : undefined}
                                                             whileHover={{y: -3, scale: 1.1}}
-                                                            className={`p-3 rounded-full transition-colors ${
+                                                            className={` p-3  rounded-full transition-colors ${
                                                                 isDarkMode
                                                                 ? "text-gray-400 hover:text-white hover:bg-gray-800"
                                                                 : "text-gray-600 hover:text-gray-900 hover:bg-gray-200" 
@@ -248,7 +250,7 @@ const HeroSection = () => {
                                                 {/* Tech stack - mobile */}
                                                 <motion.div
                                                     variants={itemVariants}
-                                                    className="flex justify-center items-center space-x-6 text-xs uppercase tracking-widest flex-wrap"
+                                                    className="flex flex-wrap justify-center mt-7 space-x-2 text-xs uppercase tracking-widest "
                                                 >
                                                     <span
                                                     className={isDarkMode ? "text-gray-600" : "text-gray-500"}
@@ -317,7 +319,7 @@ const HeroSection = () => {
                                             Building digital
                                         </span>
                                         <br />
-                                        <span className="text-blue-500 font-medium">experiences</span>
+                                        <span className="bg-gradient-to-r from-purple-500 to-orange-500 bg-clip-text text-transparent font-medium">experiences</span>
                                         <br />
                                         <span className={isDarkMode ? "text-white" : "text-gary-900"}>
                                             that matter
@@ -339,10 +341,15 @@ const HeroSection = () => {
                                         className="flex gap-6 mb-8"
                                     >
                                         <motion.button
-                                            whileHover={{y:-2}}
+                                            whileHover={{scale:1.03}}
+                                            transition={{duration:0.3}}
                                             whileTap={{scale:0.98}}
                                             onClick={() => scrollToSection("work")}
-                                            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300"
+                                            className={` text-white px-8 py-3 rounded-full text-sm hover:shadow-violet-500/40 uppercase tracking-wider font-medium duration-300 transition-all transform-gpu will-change-transform cursor-pointer ${
+                                                isDarkMode
+                                                ? "bg-gradient-to-br from-violet-500/40 to-orange-500 hover:shadow-sm "
+                                                : "bg-gradient-to-br from-violet-500/70 to-orange-500 hover:shadow-md "
+                                            }`}
                                         >
                                             View Work
                                         </motion.button>
@@ -360,19 +367,21 @@ const HeroSection = () => {
                                             </motion.button>
                                     </motion.div>
 
-                                    {/* Social links - Mobile */}
+                                    {/* Social links - Desktop */}
                                     <motion.div
                                         variants={itemVariants}
                                         className="flex space-x-6 mb-12"
                                     >
                                         {[
-                                            {icon: FiGithub,href:"#"},
-                                            {icon: FiLinkedin,href:"#"},
-                                            {icon: Mail,href:"#"}
+                                            {icon: FiGithub,href:"https://github.com/Ashwin-RH",target:"_blank"},
+                                            {icon: FiLinkedin,href:"https://linkedin.com/in/ashwin-rh-aa263b217",target:"_blank"},
+                                            {icon: Mail,href:"https://mail.google.com/mail/?view=cm&fs=1&to=ashwinharagi@gmail.com",target:"_blank"}
                                         ].map((social,index)=> (
                                             <motion.a
                                                 key={index}
                                                 href={social.href}
+                                                target={social.target || "_self"}
+                                                rel={social.target === "blank" ? "noopener noreferrer" : undefined}
                                                 whileHover={{y: -3, scale: 1.1}}
                                                 className={`p-3 rounded-full transition-colors ${
                                                     isDarkMode
@@ -385,13 +394,100 @@ const HeroSection = () => {
                                         ))}
                                     </motion.div>
                                 </motion.div>
+
+                                {/* Right Column - Content */}
+                                <motion.div
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={imageVariants}
+                                    className="flex justify-center lg:justify-end"
+                                >
+                                    <div className="relative">
+                                        {/* Tech Stack - Desktop */}
+                                        <motion.div
+                                                    variants={itemVariants}
+                                                    className="flex items-center space-x-8 text-xs uppercase tracking-widest absolute -top-16 -left-28"
+                                                >
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                                                    >
+                                                        React
+                                                    </span>
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                                                    >
+                                                        .
+                                                    </span>
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                                                    >
+                                                        Node.js
+                                                    </span>
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                                                    >
+                                                        .
+                                                    </span>
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                                                    >
+                                                        JavaScript
+                                                    </span>
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-700" : "text-gray-400"}
+                                                    >
+                                                        .
+                                                    </span>
+                                                    <span
+                                                    className={isDarkMode ? "text-gray-600" : "text-gray-500"}
+                                                    >
+                                                        MongoDB
+                                                    </span>
+                                                </motion.div>
+                                                
+                                                {/* Decorative elements */}
+                                                <div className="relative w-80 h-96">
+                                                <motion.div
+                                                    animate={{rotate: 360}}
+                                                    transition={{
+                                                        duration:20,
+                                                        repeat:Infinity,
+                                                        ease: "linear"
+                                                    }}
+                                                    className="absolute -inset-4 rounded-3xl border border-blue-500/20 z-0"
+                                                />
+                                                <motion.div
+                                                    animate={{rotate:-360}}
+                                                    transition={{
+                                                        duration:30,
+                                                        repeat:Infinity,
+                                                        ease: "linear"
+                                                    }}
+                                                    className="absolute -inset-8 rounded-3xl border border-purple-500/10 z-0"
+                                                />
+                                                <motion.div
+                                                    whileHover={{scale:1.02}}
+                                                    className={` relative w-full h-full rounded-3xl overflow-hidden border-4 z-10 duration-500 transition-all transform-gpu will-change-transform  ${
+                                                        isDarkMode ? "border-gray-800" : "border-gray-300"
+                                                    } shadow-2xl`}
+                                                >
+                                                    <img
+                                                        src={PROFILE_PIC}
+                                                        alt="Profile Pic 😊"
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </motion.div>    
+                                                </div>  
+                                                      
+                                    </div>
+                                </motion.div>
                             </div>
                         </div>
                         
 
                         {/* Scroll Indicator */}
                         <motion.div
-                            animate={{y: [0, 0, 0] }}
+                            animate={{y: [0, 8, 0] }}
                             transition={{duration: 2,repeat: Infinity}}
                             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
                         >
