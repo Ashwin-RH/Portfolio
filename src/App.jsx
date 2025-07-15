@@ -6,6 +6,7 @@ import HeroSection from './components/Sections/HeroSection'
 import ProjectSection from './components/Sections/ProjectSection'
 import SkillsSection from './components/Sections/SkillsSection'
 import { ThemeProvider } from './context/ThemeContext'
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <ThemeProvider>
       <div> 
+        <Toaster position="top-center" />
         <Navbar/>
         <HeroSection/>
         {/* <SkillsSection /> */}

@@ -11,6 +11,7 @@ import { CONTACT_INFO, SOCIAL_LINKS } from "../../utils/data";
 import { containerVariant, itemVariants } from "../../utils/helper";
 import TextInput from "../Input/TextInput";
 import SuccessModel from "../SuccessModel";
+import toast from "react-hot-toast";
 
 
 const ContactSection = () => {
@@ -41,20 +42,49 @@ const ContactSection = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
 
-        //Simulate API call
-        await new Promise((resolve) => setTimeout(resolve,1000));
 
-        setIsSubmitting(false);
-        setShowSuccess(true);
-        setFormData({name: "",email: "",message: ""})
+const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        //Auto hide success modal after 3 seconds
-        setTimeout(() => setShowSuccess(false),3000);
-    };
+    // 🔒 Validation
+    if (!formData.name || !formData.email || !formData.message) {
+        toast.error("Please fill out all fields.");
+        return;
+    }
+
+    if (!formData.email.includes("@")) {
+        toast.error("Please enter a valid email address.");
+        return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+        const response = await fetch("https://formspree.io/f/mldleeao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+            toast.success("✅ Message sent successfully!");
+            setShowSuccess(true);
+            setFormData({ name: "", email: "", message: "" });
+            setTimeout(() => setShowSuccess(false), 3000);
+        } else {
+            toast.error("Failed to send message. Try again later.");
+        }
+    } catch (error) {
+        toast.error("Something went wrong. Please try again.");
+        console.error(error);
+    }
+
+    setIsSubmitting(false);
+};
+
 
   return (
     <section
@@ -169,7 +199,7 @@ const ContactSection = () => {
                                 disabled={IsSubmitting}
                                 whileHover={{y:-2,scale:1.02}}
                                 whileTap={{scale: 0.98}}
-                                className="w-full bg-gradient-to-l from-orange-500 to-fuchsia-500 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2 md:brightness-80 hover:brightness-90 transform-gpu will-change-transform"
+                                className="w-full bg-gradient-to-l from-orange-500 to-fuchsia-500 disabled:bg-blue-400 text-white py-4 rounded-xl text-sm uppercase tracking-wider font-medium transition-all duration-300 flex items-center justify-center space-x-2 md:brightness-80 hover:brightness-90 transform-gpu will-change-transform cursor-pointer"
                                 onClick={handleSubmit}
                             >
                                 {IsSubmitting ? (
@@ -187,7 +217,7 @@ const ContactSection = () => {
                                     </>
                                 ):(
                                     <>
-                                        <Send size={18} />
+                                        <Send size={18}  />
                                         <span>Send Message</span>
                                     </>
                                 )}
