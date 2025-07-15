@@ -1,25 +1,53 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const SplashScreen = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 2500); // Show for 2.5s
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <motion.div
-      className="fixed inset-0 flex items-center border-2 justify-center bg-gray-800 z-[9999]"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ delay: 2.5, duration: 0.5 }}
-    >
-      <motion.img
-        src="/favicon.png"
-        alt="Logo"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        className="w-24 h-24 rounded-full shadow-md shadow-white animate-pulse"
-      />
-    </motion.div>
+    <AnimatePresence>
+      {showSplash && (
+        <motion.div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/20"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Background Gradient Elements */}
+          <motion.div
+            className="absolute w-60 h-60 rounded-full bg-indigo-500  blur-3xl top-5 -left-1 opacity-5 pointer-events-none"
+            initial={{ opacity: 0.3 }}
+            animate={{ opacity: 0.3 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+          />
+          <motion.div
+            className="absolute w-60 h-60 rounded-full bg-purple-500  blur-3xl bottom-10 -right-1 opacity-5 pointer-events-none"
+            initial={{ opacity: 0.2 }}
+            animate={{ opacity: 0.2 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+          />
+
+          {/* Splash Logo */}
+          <motion.img
+            src="/favicon.png"
+            alt="Logo"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 1 }}
+            className="w-24 h-24 rounded-full shadow-md shadow-violet-500 animate-pulse"
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
