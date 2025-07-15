@@ -7,7 +7,9 @@ import ProjectSection from './components/Sections/ProjectSection'
 import SkillsSection from './components/Sections/SkillsSection'
 import { ThemeProvider } from './context/ThemeContext'
 import { Toaster } from 'react-hot-toast';
-import SplashScreen from './components/Sections/SplashScreen';
+import SplashScreen from './components/SplashScreen';
+import { useEffect, useState } from 'react'
+import ScrollProgress from './components/ScrollProgress'
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -29,6 +31,7 @@ const App = () => {
           <SplashScreen />
         ) : (
           <>
+          <ScrollProgress/>
           <Navbar/>
         <HeroSection/>
         {/* <SkillsSection /> */}
