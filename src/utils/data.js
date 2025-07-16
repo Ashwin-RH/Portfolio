@@ -2,9 +2,10 @@ import { FiGithub, FiLinkedin, FiTwitter, } from "react-icons/fi";
 import { Code2, Server, Settings, MonitorSmartphone, MapPin, Mail, Phone } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import PROFILE_PIC from "../assets/images/profile_pic.jpg";
-import Project1 from "../assets/images/project1.png"
 import { hover } from "framer-motion";
 
+import Project1 from "../assets/images/project1.png"
+import Project2 from "../assets/images/project2.png"
 
 
 export const PROFILE = {
@@ -101,11 +102,11 @@ export const PROJECTS = [
   {
     id:2,
     title: "Calculator",
-    description: "Track your monthly expenses with charts, categories, and dark mode.",
-    
+    description: "A modern React-based calculator with a clean Tailwind CSS UI. Supports basic arithmetic and unit conversions like currency, weight, area, speed, and temperature.",
+    image:Project2,
     tags: ["React", "Context API", "Tailwind CSS"],
-    githubUrl: "https://github.com/your-username/expense-tracker",
-    liveUrl: "https://expense-tracker.vercel.app",
+    githubUrl: "https://github.com/Ashwin-RH/Calculator",
+    liveUrl: "https://eval-calci.vercel.app/",
     featured:false,
     category:"web app"
   },

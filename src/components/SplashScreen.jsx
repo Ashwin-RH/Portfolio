@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, easeInOut } from 'framer-motion';
 
 const SplashScreen = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -42,7 +42,7 @@ const SplashScreen = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1,ease:"easeInOut" }}
             className="w-24 h-24 rounded-full shadow-md shadow-violet-500 animate-pulse"
           />
         </motion.div>

@@ -90,7 +90,7 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
             {project.tags.map((tag,index) =>(
             <span 
             key={index}
-            className={` text-sm px-1 py-1 rounded-xl border border-gray-800 font-medium ${
+            className={` text-sm px-1 py-1 rounded-xl border border-gray-600 shadow-inner font-medium ${
               isDarkMode
               ? "bg-gradient-to-r from-gray-800 to-gray-900 text-gray-300"
               : "bg-gradient-to-r from-gray-700 to-gray-800 text-gray-300"

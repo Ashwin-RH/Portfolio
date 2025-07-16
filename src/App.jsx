@@ -10,6 +10,7 @@ import { Toaster } from 'react-hot-toast';
 import SplashScreen from './components/SplashScreen';
 import { useEffect, useState } from 'react'
 import ScrollProgress from './components/ScrollProgress'
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -41,6 +42,7 @@ const App = () => {
         <Footer />
         </>
         )}
+        <Analytics />
       </div>
     </ThemeProvider>
     
