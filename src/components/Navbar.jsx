@@ -43,7 +43,7 @@ const Navbar = () => {
         >
             {/* Scroll Progress Border */}
             <motion.div
-                className={`fixed -bottom-0.5 left-[50.5%] md:left-[50.1%] -translate-x-1/2 z-50 h-[2px] origin-left rounded-full md:w-[78rem] w-[305px]  ${
+                className={`fixed -bottom-0.5 left-[50%] md:left-[50.1%] -translate-x-1/2 z-50 h-[2px] origin-left rounded-full md:w-[78rem] w-[305px]  ${
                 isDarkMode
                     ? "bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-500"
                     : "bg-gradient-to-r from-orange-500 via-pink-400 to-red-500"
