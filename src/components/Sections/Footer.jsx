@@ -44,8 +44,27 @@ const Footer = () => {
     ];
 
     const scrollToTop = () => {
-        window.scrollTo({top:0, behavior:"smooth"})
-    };
+  const start = window.scrollY;
+  const duration = 1500; // in ms → 1.5 seconds (adjust as needed)
+  const startTime = performance.now();
+
+  const animate = (currentTime) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1); // normalize [0,1]
+
+    // Ease-out cubic function (smooth deceleration)
+    const ease = 1 - Math.pow(1 - progress, 3);
+    
+    window.scrollTo(0, start * (1 - ease));
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
+  };
+
+  requestAnimationFrame(animate);
+};
+
 
     //Animated Gradient Line component
     const AnimatedGradientLine = () => ( 
@@ -67,7 +86,7 @@ const Footer = () => {
                 : "from-blue-500 via-purple-600 to-blue-500"
             } blur-sm`}
             animate={{
-                x: ['-50%', 'calci(100vw +50%)' ]
+                x: ['-50%', 'calc(100vw +50%)' ]
             }}
             transition={{
                 x: {
@@ -88,7 +107,7 @@ const Footer = () => {
         className={`relative ${
             isDarkMode
             ? "bg-gray-900 text-white"
-            : "bg-gradient-to-r from-gray-300 via-white to-gray-300 text-gray-900"
+            : "bg-gradient-to-br from-gray-300 via-white to-gray-300 text-gray-900"
         } overflow-hidden`}
     >
 
