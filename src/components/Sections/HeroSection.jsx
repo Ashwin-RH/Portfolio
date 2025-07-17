@@ -120,7 +120,7 @@ const HeroSection = () => {
                                     }}
                                     className={`absolute top-20 right-10 z-50 p-2 rounded-full flex items-center justify-center ${
                                         isDarkMode
-                                        ? "bg-gradient-to-br from-gray-800/40 to-gray-900 text-orange-500"
+                                        ? "bg-gradient-to-br from-gray-800/40 to-gray-900 text-orange-500 border border-indigo-400/40"
                                         : "bg-gray-200/50 text-gray-600 border border-gray-400 hover:text-gray-900 hover:bg-gray-200 hover:border"
                                     }`}
                                     >
@@ -387,7 +387,7 @@ const HeroSection = () => {
                                             className={`border ${
                                                 isDarkMode
                                                 ? "border-gray-700 hover:border-gray-600 text-gray-300"
-                                                : "border-gray-300 hover:border-gray-400 text-gray-700"
+                                                : "border-gray-400 hover:border-gray-400 text-gray-700"
                                             } px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 cursor-pointer`}
                                             >
                                                 Get in Touch
@@ -398,23 +398,25 @@ const HeroSection = () => {
                                             aria-label="Download Resume"
                                             title="Download Resume"
                                             whileTap={{ scale: 0.95 }}
-                                            whileHover={{scale: 1.05}}
-                                            transition={{
-                                                duration: 1.5,
-                                                repeat: Infinity,
-                                                repeatType: "loop",
-                                                ease: "easeInOut"
-                                            }}
-                                            className={` px-8 py-4 rounded-full flex items-center justify-center gap-2 border ${
+                                            whileHover={{ scale: 1.02 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            className={`px-8 py-4 rounded-full flex items-center justify-center gap-2 border transition-all duration-300 will-change-transform ${
                                                 isDarkMode
-                                                ? "bg-gray-950/50 text-orange-500 border-indigo-500 hover:border-blue-400 hover:shadow-lg shadow-indigo-500/10"
-                                                : "bg-gray-200/50 text-gray-600 border border-gray-400 hover:text-gray-900 hover:bg-gray-200 hover:border"
-                                            } transition-all duration-300`}
+                                                ? "bg-gray-950/50 border-indigo-500 hover:border-blue-400 hover:shadow-lg shadow-indigo-500/10"
+                                                : "bg-gray-200/50 border-gray-400 hover:text-gray-900 hover:bg-gray-200"
+                                            }`}
                                             >
-                                            <Download size={22} />
-                                            <span className="text-white text-sm uppercase tracking-wider font-medium "> Download CV</span>
-                                            
+                                            <Download size={22} className={` ${
+                                                isDarkMode
+                                                ? "text-orange-500" : "text-gray-600"
+                                            }`} />
+                                            <span className={`text-sm uppercase tracking-widest font-medium ${
+                                                isDarkMode ? "text-white" : "text-gray-600"
+                                            }`}>
+                                                Download CV
+                                            </span>
                                             </motion.a>
+
                                     </motion.div>
 
                                     {/* Social links - Desktop */}
