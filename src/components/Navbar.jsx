@@ -15,7 +15,10 @@ import {
 } from "lucide-react";
 import {useTheme} from "../context/ThemeContext"
 
+
 const Navbar = () => {
+    const { scrollYProgress } = useScroll();
+
     const { isDarkMode,toggleDarkMode} = useTheme();
     const [isMenuOpen,setIsMenuOpen] = useState(false);
 
@@ -32,18 +35,31 @@ const Navbar = () => {
   return (
         <motion.nav
         style={{opacity:1}}
-        className={`fixed top-0 w-full z-50 px-6 py-4  ${
-            isDarkMode ? "bg-gray-950/80" : "bg-transparent"
-        } backdrop-blur-xs border-b ${
-            isDarkMode ? "border-gray-800" : "border-gray-300/50"
-        }`}
+        className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 px-4 py-4 rounded-2xl w-[330px]  md:w-[80rem]   ${
+            isDarkMode ? "bg-gray-950/50 shadow-xl shadow-blue-500/10" : "bg-gray-900/10"
+        } backdrop-blur-xs border-2 ${
+            isDarkMode ? "border-gray-700" : "border-gray-800/50"
+        } `}
         >
+            {/* Scroll Progress Border */}
+            <motion.div
+                className={`fixed -bottom-0.5 left-[50.5%] md:left-[50.1%] -translate-x-1/2 z-50 h-[2px] origin-left rounded-full md:w-[78rem] w-[306px]  ${
+                isDarkMode
+                    ? "bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-500"
+                    : "bg-gradient-to-r from-orange-500 via-pink-400 to-red-500"
+                }`}
+                style={{
+                // width: "100%",
+                scaleX: scrollYProgress, // animate width
+                transformOrigin: "0%",   // start from left
+                }}
+            />
             <div className='max-w-7xl mx-auto w-full flex justify-between items-center'>
             {/* Brand + name (visible on all screens) */}
             <div className='flex items-center space-x-2'>
                 <SiOpenproject size={24} className='text-orange-500 ' />
                 <span
-                className={`text-xl font-semibold ml-1 duration-300 transition-all ${
+                className={`text-xl font-semibold  duration-300 transition-all ${
                     isDarkMode
                     ? "text-gray-300 hover:text-white"
                     : "text-gray-600 hover:text-gray-800"

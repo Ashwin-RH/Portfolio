@@ -7,7 +7,7 @@ const ScrollProgress = () => {
 
   return (
     <motion.div
-      className={`fixed top-17 left-0 right-0 rounded-full  z-[999] ${
+      className={`fixed top-22 left-3 right-3 rounded-full  z-[999] ${
         isDarkMode
         ? "h-0.5 bg-gradient-to-r from-indigo-500 via-purple-400 to-pink-500"
         : "h-0.5 bg-gradient-to-r from-orange-500 via-red-400 to-pink-500"

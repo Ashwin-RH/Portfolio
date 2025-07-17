@@ -32,7 +32,7 @@ const App = () => {
           <SplashScreen />
         ) : (
           <>
-          <ScrollProgress/>
+          {/* <ScrollProgress/> */}
           <Navbar/>
         <HeroSection/>
         <SkillsSection />

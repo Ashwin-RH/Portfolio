@@ -118,7 +118,7 @@ const HeroSection = () => {
                                         repeatType: "loop",
                                         ease: "easeInOut"
                                     }}
-                                    className={`absolute top-20 right-10 z-50 p-2 rounded-full flex items-center justify-center ${
+                                    className={`absolute top-28 right-10 z-50 p-2 rounded-full flex items-center justify-center ${
                                         isDarkMode
                                         ? "bg-gradient-to-br from-gray-800/40 to-gray-900 text-orange-500 border border-indigo-400/40"
                                         : "bg-gray-200/50 text-gray-600 border border-gray-400 hover:text-gray-900 hover:bg-gray-200 hover:border"
@@ -127,7 +127,7 @@ const HeroSection = () => {
                                     <Download size={22} />
                                     
                                     </motion.a>
-                                    <span className="absolute top-30 right-9 w-12 flex items-center justify-center text-sm font-semibold" >Resume</span>
+                                    <span className="absolute top-38 right-9 w-12 flex items-center justify-center text-sm font-semibold" >Resume</span>
 
                                     
                                     {/* Profile Image - Mobile */}

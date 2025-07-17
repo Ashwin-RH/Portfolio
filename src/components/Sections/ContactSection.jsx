@@ -322,7 +322,7 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Bottom CTA */}
-            <motion.div 
+            {/* <motion.div 
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
                 variants={containerVariant}
@@ -356,7 +356,7 @@ const handleSubmit = async (e) => {
                             Schedule a Call
                         </motion.button>
                 </motion.div>
-            </motion.div>
+            </motion.div> */}
 
         </div>
 
