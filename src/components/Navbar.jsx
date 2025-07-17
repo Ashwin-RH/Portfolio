@@ -64,7 +64,7 @@ const Navbar = () => {
             <div className='flex items-center space-x-4'>
                 {/* Desktop nav */}
                 <div className='hidden md:flex items-center space-x-8'>
-                {["Home", "Work", "About", "Contact"].map((item) => (
+                {["Home","Skills", "Work", "About", "Contact"].map((item) => (
                     <motion.button
                     key={item}
                     whileHover={{ y: -2 }}
@@ -124,7 +124,7 @@ const Navbar = () => {
                             isDarkMode ? "bg-gray-900" : "bg-white"
                         } border ${isDarkMode ? "border-gray-800" : "border-gray-200"}`}
                         >
-                            {["Home","Work","About","Contact"].map((item) => (
+                            {["Home","Skills","Work","About","Contact"].map((item) => (
                                 <motion.button
                                 key={item}
                                 whileHover={{x: 5}}

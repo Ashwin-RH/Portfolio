@@ -80,10 +80,10 @@ export const TECH_STACK = [
 
 // Statistics Section
 export const STATS = [
-  { number: "50+", label: "Projects completed" },
-  { number: "3+", label: "Years experience" },
-  { number: "20+", label: "Technologies used" },
-  { number: "100%", label: "Client satisfaction" },
+  { number: "3+", label: "Projects completed" },
+  // { number: "3+", label: "Years experience" },
+  { number: "10+", label: "Technologies used" },
+  // { number: "100%", label: "Client satisfaction" },
 ];
 
 // Projects (Optional)

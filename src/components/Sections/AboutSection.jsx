@@ -21,7 +21,7 @@ const AboutSection = () => {
     <section
       id="about"
       ref={sectionRef}
-      className={`py-24 pb-35 px-5 md:px-24 ${
+      className={`py-24 px-6 ${
         isDarkMode
           ? "bg-gray-950/50"
           : "bg-gradient-to-r from-green-200 via-lime-100 to-green-200"
@@ -96,7 +96,7 @@ const AboutSection = () => {
             className={`p-8 rounded-2xl border ${
               isDarkMode
                 ? "bg-gray-800/50 text-white border-gray-700 shadow-md shadow-blue-500/20 backdrop-blur-sm"
-                : "bg-gradient-to-br from-gray-200/50 to-gray-400/20 border-gray-200 backdrop-blur-sm"
+                : "bg-gradient-to-br from-gray-200/50 to-gray-400/50 border-gray-200 backdrop-blur-sm"
             } `}
           >
             <p className="leading-relaxed text-justify px-4 mb-4 mt-4">

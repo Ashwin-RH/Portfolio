@@ -6,6 +6,7 @@ import {
 import {
     ArrowDown,
     Mail,
+    Download
 } from "lucide-react";
 import {FiGithub, FiLinkedin} from "react-icons/fi";
 import { useTheme } from "../../context/ThemeContext";
@@ -103,6 +104,32 @@ const HeroSection = () => {
                                 variants={containerVariant}
                                 className="text-center"
                                 >
+                                
+                                   <motion.a
+                                    href="/Ashwin_haragi Resume.pdf"
+                                    download
+                                    aria-label="Download Resume"
+                                    title="Download Resume"
+                                    whileTap={{ scale: 0.95 }}
+                                    animate={{ y: [0, -4, 0] }}
+                                    transition={{
+                                        duration: 1.5,
+                                        repeat: Infinity,
+                                        repeatType: "loop",
+                                        ease: "easeInOut"
+                                    }}
+                                    className={`absolute top-20 right-10 z-50 p-2 rounded-full flex items-center justify-center ${
+                                        isDarkMode
+                                        ? "bg-gradient-to-br from-gray-800/40 to-gray-900 text-orange-500"
+                                        : "bg-gray-200/50 text-gray-600 border border-gray-400 hover:text-gray-900 hover:bg-gray-200 hover:border"
+                                    }`}
+                                    >
+                                    <Download size={22} />
+                                    
+                                    </motion.a>
+                                    <span className="absolute top-30 right-9 w-12 flex items-center justify-center text-sm font-semibold" >Resume</span>
+
+                                    
                                     {/* Profile Image - Mobile */}
                                     <motion.div variants={imageVariants} className="mb-8">
                                         <div className="w-32 h-32 mx-auto relative">
@@ -361,10 +388,33 @@ const HeroSection = () => {
                                                 isDarkMode
                                                 ? "border-gray-700 hover:border-gray-600 text-gray-300"
                                                 : "border-gray-300 hover:border-gray-400 text-gray-700"
-                                            } px-8 py-4 rounded-full text-sm uppercase trcaking-wider font-medium transition-all duration-300`}
+                                            } px-8 py-4 rounded-full text-sm uppercase tracking-wider font-medium transition-all duration-300 cursor-pointer`}
                                             >
                                                 Get in Touch
                                             </motion.button>
+                                            <motion.a
+                                            href="/Ashwin_haragi Resume.pdf"
+                                            download
+                                            aria-label="Download Resume"
+                                            title="Download Resume"
+                                            whileTap={{ scale: 0.95 }}
+                                            whileHover={{scale: 1.05}}
+                                            transition={{
+                                                duration: 1.5,
+                                                repeat: Infinity,
+                                                repeatType: "loop",
+                                                ease: "easeInOut"
+                                            }}
+                                            className={` px-8 py-4 rounded-full flex items-center justify-center gap-2 border ${
+                                                isDarkMode
+                                                ? "bg-gray-950/50 text-orange-500 border-indigo-500 hover:border-blue-400 hover:shadow-lg shadow-indigo-500/10"
+                                                : "bg-gray-200/50 text-gray-600 border border-gray-400 hover:text-gray-900 hover:bg-gray-200 hover:border"
+                                            } transition-all duration-300`}
+                                            >
+                                            <Download size={22} />
+                                            <span className="text-white text-sm uppercase tracking-wider font-medium "> Download CV</span>
+                                            
+                                            </motion.a>
                                     </motion.div>
 
                                     {/* Social links - Desktop */}

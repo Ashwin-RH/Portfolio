@@ -9,7 +9,7 @@ import { containerVariant,itemVariants } from "../../utils/helper";
 const SkillsSection = () => {
   const { isDarkMode } = useTheme();
   const sectionRef = useRef(null);
-  const isinView = useInView(sectionRef, { once: true,margin: "-100px"});
+  const isinView = useInView(sectionRef, {margin: "-100px"});
 
   const { scrollYProgress} = useScroll({
     target:sectionRef,
@@ -35,7 +35,7 @@ const SkillsSection = () => {
       ref={sectionRef}
       id="skills"
       className={` py-24 px-6 ${
-        isDarkMode ? "bg-gray-950 text-white" : "bg-gradient-to-r from-indigo-200 via-purple-100 to-pink-200 text-gray-900"
+        isDarkMode ? "bg-gray-950 text-white" : "bg-gradient-to-r from-green-200 via-lime-100 to-green-200 text-gray-900"
       } relative overflow-hidden`}
       >
         {/* Background Elements */}
@@ -45,7 +45,7 @@ const SkillsSection = () => {
         >
           <div 
             className={`absolute top-35 right-1/4 w-72 h-72 rounded-full blur-3xl  ${
-              isDarkMode ? "opacity-30 bg-blue-500" : "opacity-30 bg-blue-400"
+              isDarkMode ? "opacity-30 bg-blue-500" : "opacity-30 bg-indigo-500"
             } `}
           />
           <div 
@@ -94,7 +94,7 @@ const SkillsSection = () => {
           </motion.div>
 
           {/* Skills Grid */}
-          <motion.div 
+          {/* <motion.div 
           initial="hidden"
           animate={isinView ? "visible" : "hidden"}
           variants={containerVariant}
@@ -109,9 +109,11 @@ const SkillsSection = () => {
                   ? "bg-gray-900/50 border-gray-800 backdrop-blur-sm"
                   : "bg-white/80 border-gray-200 backdrop-blur-sm"
                 }`}
-              >
+              > */}
+
+
                 {/* Category Header */}
-                <div className="flex items-center mb-6">
+                {/* <div className="flex items-center mb-6">
                   <div 
                     className={` p-3 rounded-xl ${
                       isDarkMode ? "bg-gray-800" : "bg-gray-100"
@@ -129,10 +131,10 @@ const SkillsSection = () => {
                       {category.description}
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Skills list */}
-                <div className="space-y-4">
+                {/* <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skill.name} className="group">
                       <div className="flex justify-between items-center mb-2">
@@ -166,7 +168,7 @@ const SkillsSection = () => {
               </div>
             </motion.div>
            ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Additional Skills */}
         <motion.div 
@@ -179,21 +181,32 @@ const SkillsSection = () => {
             variants={itemVariants}
             className="text-center mb-8"
           >
-            <h3 className="text-xl font-medium mb-4">Also Working with</h3>
+            {/* <h3 className="text-xl font-medium mb-4">Also Working with</h3> */}
           </motion.div>
 
+          <motion.div className="flex justify-center items-center ">
+          <motion.div
+            variants={containerVariant}
+            initial="hidden"
+            animate={isinView ? "visible" : "hidden"}
+            className={`md:w-[50%] flex justify-center items-center  rounded-2xl shadow-2xl shadow-blue-500/10 backdrop-blur-sm ${
+              isDarkMode
+              ? "bg-gradient-to-br from-gray-800/50 to-gray-950/50 border border-gray-600"
+              : "bg-gradient-to-br from-gray-200/50 to-gray-400/50 border-1 border-gray-200"
+            }`}
+          >
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-3"
+            className="flex flex-wrap justify-center gap-3 p-5 mt-3 mb-3"
           >
             {TECH_STACK.map((tech, index) => (
               <motion.span
                 key={tech}
                 whileHover={{y: -1, scale: 1.05}}
-                className={` px-4 py-2 text-sm rounded-full border duration-300 transiton-all transform-gpu will-change-transform  ${
+                className={` px-4 py-2 text-sm rounded-full border duration-300 transition-all transform-gpu will-change-transform  ${
                   isDarkMode
                   ? "bg-gray-900 border-gray-700 text-gray-300 hover:border-gray-600"
-                  : "bg-white border-gray-300 text-gray-700 hover:border-gray-400"
+                  : "bg-gray-100/70 border-gray-300 text-gray-800 hover:border-gray-400"
                 }`}
               >
                 {tech}
@@ -201,13 +214,15 @@ const SkillsSection = () => {
             ))}
           </motion.div>
         </motion.div>
+        </motion.div>
+        </motion.div>
 
         {/* Stats */}
         <motion.div 
           initial="hidden"
           animate={isinView ? "visible" : "hidden"}
           variants={containerVariant}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-20 grid grid-cols-2 md:grid-cols-2 gap-8"
         >
           {STATS.map((stat,index) => (
             <motion.div
@@ -215,7 +230,7 @@ const SkillsSection = () => {
               variants={itemVariants}
               className="text-center"
             >
-              <div className="text-2xl md:text-3xl font-light text-blue-500 mb-2">
+              <div className="text-2xl md:text-3xl font-light bg-gradient-to-br from-blue-400 to-indigo-300 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
               <div 

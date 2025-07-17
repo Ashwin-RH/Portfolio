@@ -35,7 +35,7 @@ const App = () => {
           <ScrollProgress/>
           <Navbar/>
         <HeroSection/>
-        {/* <SkillsSection /> */}
+        <SkillsSection />
         <ProjectSection />
         <AboutSection />
         <ContactSection />
