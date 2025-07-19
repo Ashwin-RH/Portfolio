@@ -95,7 +95,7 @@ export const PROJECTS = [
     image:Project1,
     tags: ["React", "Node.js", "MongoDB", "Express"],
     githubUrl: "https://github.com/Ashwin-RH/Expense-Tracker",
-    liveUrl: "https://stashup.vercel.app/login",
+    liveUrl: "https://stashup.vercel.app/",
     featured: true,
     category:"Full Stack"
   },
