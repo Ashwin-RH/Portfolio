@@ -79,7 +79,7 @@ const AboutSection = () => {
               isDarkMode ? "bg-gradient-to-r from-indigo-200 to-pink-500" : "bg-gradient-to-r from-indigo-400 to-pink-500"
             }`} 
             >
-              I Am
+              Am I?
             </span>
           </motion.h2>
         </motion.div>
@@ -99,19 +99,19 @@ const AboutSection = () => {
                 : "bg-gradient-to-br from-gray-200/50 to-gray-400/50 border-gray-200 backdrop-blur-sm"
             } `}
           >
-            <p className="leading-relaxed text-justify px-4 mb-4 mt-4">
+            <p className="leading-relaxed text-justify px-1 mb-2 mt-2 md:px-4 md:mb-4 md:mt-4">
               I'm
-              <span className="pl-1 text-orange-500 font-bold">Ashwin Haragi</span>, a full-stack web
+              <span className="pl-1 text-orange-500 font-bold text-lg">Ashwin Haragi</span>, a full-stack web
               developer with a strong foundation in the
-              <span className="pl-1 text-orange-500">
+              <span className="pl-1 text-orange-500 font-medium">
                 MERN stack (MongoDB, Express, React, Node.js)
               </span>{" "}
               and a consistent problem solver on
-              <span className="text-orange-500"> LeetCode.</span> I enjoy building clean, responsive
+              <span className="text-orange-500 font-medium"> LeetCode.</span> I enjoy building clean, responsive
               web applications with strong focus on both frontend design and backend logic.
             </p>
-            <p className="leading-relaxed text-justify px-4 mb-4">
-              I'm currently enhancing my skills in Data Structures and Algorithms, while exploring
+            <p className="leading-relaxed text-justify  px-1 mb-2  md:px-4 md:mb-4">
+              I'm currently enhancing my skills in <span className="font-medium text-orange-500">Data Structures and Algorithms</span> , while exploring
               advanced features like authentication, API integration, and performance optimization. My
               goal is to become internship-ready and contribute to impactful full-stack projects.
             </p>

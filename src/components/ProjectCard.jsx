@@ -47,13 +47,17 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
             src={project.image}
             alt={project.title}
             onClick={() => setShowOverlay(true)}
-            className="w-full h-48 object-cover text-white transition-transform duration-500 group-hover:scale-103"
+            className="w-full h-39 md:w-[500px] md:h-[205px] object-contain text-white transition-transform duration-500 "
           />
 
           {/* Title Badge */}
           <div className="absolute top-6 left-4 ">
             <span 
-            className="text-sm text-white px-1 py-1 font-medium rounded-full" >
+            className={`text-sm text-white px-1 py-1 font-medium rounded-full ${
+              isDarkMode
+                ? "bg-gradient-to-r from-gray-800 to-gray-900 text-gray-300 "
+                : "bg-gradient-to-r from-gray-700 to-gray-800 text-gray-300"
+            }`}>
               {project.title}
             </span>
           </div>

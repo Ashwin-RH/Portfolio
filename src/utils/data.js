@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import PROFILE_PIC from "../assets/images/profile_pic.jpg";
 import { hover } from "framer-motion";
 
-import Project1 from "../assets/images/project1.png"
+import Project1 from "/DashBoard.png"
 import Project2 from "../assets/images/project2.png"
 
 
