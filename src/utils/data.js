@@ -116,7 +116,7 @@ export const PROJECTS = [
     title: "Veara – Weather App",
 description: "A responsive React weather app showing real-time and 3-hour forecasts using the OpenWeather API, styled with Tailwind and enhanced with toast notifications.",
     image: Project3,
-    tags: ["React", "Vite", "Tailwind CSS", "OpenWeather API"],
+    tags: ["React", "Tailwind CSS", "OpenWeather API"],
     githubUrl: "https://github.com/Ashwin-RH/weather-app",
     liveUrl: "https://veara.vercel.app/",
     featured: true,
