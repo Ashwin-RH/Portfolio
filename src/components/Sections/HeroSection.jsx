@@ -172,9 +172,10 @@ const HeroSection = () => {
 
                                                 <motion.div
                                                     variants={itemVariants}
-                                                    className=" text-3xl font-semibold text-center mb-2 "
+                                                    className="bg-gradient-to-br from-gray-500 to-sky-100 bg-clip-text text-transparent text-2xl font-semibold text-center mb-2 "
                                                     >
-                                                        Hi, I'm Ashwin 
+                                                        Hi, I'm 
+                                                        <span className="font-bold text-4xl bg-gradient-to-l from-violet-200 to-red-200 bg-clip-text text-transparent"> Ashwin</span> 
                                                     </motion.div>
 
                                                 <motion.h1
@@ -328,13 +329,21 @@ const HeroSection = () => {
                                     className="text-left"
                                 >
                                     <motion.div
+                                        variants={itemVariants}
+                                        className="text-gray-400 text-left text-3xl font-semibold text-center mb-2 "
+                                        >
+                                            Hi, I'm 
+                                            <span className="font-bold text-4xl bg-gradient-to-r from-gray-500 to-sky-100 bg-clip-text text-transparent"> Ashwin</span> 
+                                        </motion.div>
+                                    {/* <motion.div
                                         variants={textVariants}
                                         className={`text-sm uppercase tracking-widest ${
                                             isDarkMode ? "text-gray-500" : "text-gray-600"
                                         } mb-6`}
                                     >
                                         Full Stack Developer
-                                    </motion.div>
+                                    </motion.div> */}
+                                    
 
                                     <motion.h1  
                                         variants={itemVariants}

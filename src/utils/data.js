@@ -77,6 +77,8 @@ export const TECH_STACK = [
   "Express.js",
   "MongoDB",
   "Tailwind CSS",
+  "Framer Motion",
+  "Git",
 ];
 
 // Statistics Section

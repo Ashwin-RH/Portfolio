@@ -165,7 +165,7 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
                   <p className="text-white text-center text-sm">{project.description}</p>
 
                   {/* Tags Badge */}
-                  <div className="absolute bottom-10 flex grid-4 gap-3 flex-wrap">
+                  <div className="absolute bottom-10 flex gridgrid-4 gap-3 flex-wrap">
                     {project.tags.map((tag,index) =>(
                     <span 
                     key={index}
