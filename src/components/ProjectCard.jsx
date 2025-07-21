@@ -53,9 +53,9 @@ const ProjectCard = ({ project, index, isDarkMode }) => {
           {/* Title Badge */}
           <div className="absolute top-6 left-4 ">
             <span 
-            className={`text-sm text-white px-1 py-1 font-medium rounded-full ${
+            className={`text-sm text-white px-1 py-1 font-medium rounded-lg ${
               isDarkMode
-                ? "bg-gradient-to-r from-gray-800 to-gray-900 text-gray-300 "
+                ? "bg-gradient-to-r from-gray-800/70 to-gray-900/70 text-gray-300  "
                 : "bg-gradient-to-r from-gray-700 to-gray-800 text-gray-300"
             }`}>
               {project.title}

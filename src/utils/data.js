@@ -6,6 +6,7 @@ import { hover } from "framer-motion";
 
 import Project1 from "/DashBoard.png"
 import Project2 from "../assets/images/project2.png"
+import Project3 from "/weather.png"
 
 
 export const PROFILE = {
@@ -90,7 +91,7 @@ export const STATS = [
 export const PROJECTS = [
   {
     id:1,
-    title: "Expense-Tracker aka StashUp",
+    title: "StashUp - Expense Tracker",
     description: "Expense Tracker is a simple web app to record daily transactions and monitor your income, expenses, and balance in real-time.",
     image:Project1,
     tags: ["React", "Node.js", "MongoDB", "Express"],
@@ -107,20 +108,21 @@ export const PROJECTS = [
     tags: ["React", "Context API", "Tailwind CSS"],
     githubUrl: "https://github.com/Ashwin-RH/Calculator",
     liveUrl: "https://eval-calci.vercel.app/",
-    featured:false,
+    featured:true,
     category:"web app"
   },
-   {
-    id:3,
-    title: "Blog App",
-    description: "Track your monthly expenses with charts, categories, and dark mode.",
-    
-    tags: ["React", "Context API", "Tailwind CSS"],
-    githubUrl: "https://github.com/your-username/expense-tracker",
-    liveUrl: "https://expense-tracker.vercel.app",
-    featured:false,
-    category:"web app"
+  {
+    id: 3,
+    title: "Veara – Weather App",
+description: "A responsive React weather app showing real-time and 3-hour forecasts using the OpenWeather API, styled with Tailwind and enhanced with toast notifications.",
+    image: Project3,
+    tags: ["React", "Vite", "Tailwind CSS", "OpenWeather API"],
+    githubUrl: "https://github.com/Ashwin-RH/weather-app",
+    liveUrl: "https://veara.vercel.app/",
+    featured: true,
+    category: "web app"
   },
+   
 ];
 
 export const SOCIAL_LINKS = [
