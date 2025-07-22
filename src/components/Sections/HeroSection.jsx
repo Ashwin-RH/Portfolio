@@ -118,6 +118,12 @@ const HeroSection = () => {
                                         repeatType: "loop",
                                         ease: "easeInOut"
                                     }}
+                                    onClick={() => {
+                                        gtag('event','resume_download', {
+                                            event_category: 'Resume',
+                                            event_label: 'Download from motion.a button',
+                                        });
+                                    }}
                                     className={`absolute top-28 right-10 z-50 p-2 rounded-full flex items-center justify-center ${
                                         isDarkMode
                                         ? "bg-gradient-to-br from-gray-800/40 to-gray-900 text-orange-500 border border-indigo-400/40"
@@ -254,9 +260,9 @@ const HeroSection = () => {
                                                     className="flex justify-center space-x-6 mb-8"
                                                 >
                                                     {[
-                                                        {icon: FiGithub,href:"https://github.com/Ashwin-RH",target:"_blank"},
-                                                        {icon: FiLinkedin,href:"https://linkedin.com/in/ashwin-rh-aa263b217",target:"_blank"},
-                                                        {icon: Mail,href:"mailto:ashwinharagi@gmail.com"}
+                                                        {icon: FiGithub,href:"https://github.com/Ashwin-RH",target:"_blank", eventName: "github_click", label: "GitHub Profile"},
+                                                        {icon: FiLinkedin,href:"https://linkedin.com/in/ashwin-rh-aa263b217",target:"_blank", eventName: "linkedin_click", label: "LinkedIn Profile"},
+                                                        {icon: Mail,href:"mailto:ashwinharagi@gmail.com", eventName: "email_click", label: "Email"}
                                                     ].map((social,index)=> (
                                                         <motion.a
                                                             key={index}
@@ -264,6 +270,12 @@ const HeroSection = () => {
                                                             target={social.target || "_self"}
                                                             rel={social.target === "blank" ? "noopener noreferrer" : undefined}
                                                             whileHover={{y: -3, scale: 1.1}}
+                                                            onClick={() => {
+                                                                gtag('event', social.eventName, {
+                                                                    'event_category': 'Social',
+                                                                    'event_label': social.label
+                                                                });
+                                                            }}
                                                             className={` p-3  rounded-full transition-colors ${
                                                                 isDarkMode
                                                                 ? "text-gray-400 hover:text-white hover:bg-gray-800"
@@ -401,11 +413,18 @@ const HeroSection = () => {
                                             >
                                                 Get in Touch
                                             </motion.button>
+                                            
                                             <motion.a
                                             href="/Ashwin_haragi Resume.pdf"
                                             download
                                             aria-label="Download Resume"
                                             title="Download Resume"
+                                            onClick={() => {
+                                                gtag('event', 'resume_download', {
+                                                    event_category: 'Resume',
+                                                    event_label: 'Download from motion.a button'
+                                                });
+                                            }}
                                             whileTap={{ scale: 0.95 }}
                                             whileHover={{ scale: 1.02 }}
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -434,9 +453,9 @@ const HeroSection = () => {
                                         className="flex space-x-6 mb-12"
                                     >
                                         {[
-                                            {icon: FiGithub,href:"https://github.com/Ashwin-RH",target:"_blank"},
-                                            {icon: FiLinkedin,href:"https://linkedin.com/in/ashwin-rh-aa263b217",target:"_blank"},
-                                            {icon: Mail,href:"https://mail.google.com/mail/?view=cm&fs=1&to=ashwinharagi@gmail.com",target:"_blank"}
+                                            {icon: FiGithub,href:"https://github.com/Ashwin-RH",target:"_blank",eventName: "github_click",label: "GitHub Profile"},
+                                            {icon: FiLinkedin,href:"https://linkedin.com/in/ashwin-rh-aa263b217",target:"_blank",eventName: "linkedin_click",label: "LinkedIn Profile"},
+                                            {icon: Mail,href:"https://mail.google.com/mail/?view=cm&fs=1&to=ashwinharagi@gmail.com",target:"_blank",eventName: "email_click",label: "Email"}
                                         ].map((social,index)=> (
                                             <motion.a
                                                 key={index}
@@ -444,6 +463,12 @@ const HeroSection = () => {
                                                 target={social.target || "_self"}
                                                 rel={social.target === "blank" ? "noopener noreferrer" : undefined}
                                                 whileHover={{y: -3, scale: 1.1}}
+                                                onClick={() => {
+                                                    gtag('event', social.eventName, {
+                                                        'event_category': 'Social',
+                                                        'event_label': social.label
+                                                    });
+                                                }}
                                                 className={`p-3 rounded-full transition-colors ${
                                                     isDarkMode
                                                     ? "text-gray-400 hover:text-white hover:bg-gray-800"
