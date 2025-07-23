@@ -7,6 +7,7 @@ import { hover } from "framer-motion";
 import Project1 from "/DashBoard.png"
 import Project2 from "../assets/images/project2.png"
 import Project3 from "/weather.png"
+import Project4 from "/sentinel.png";
 
 
 export const PROFILE = {
@@ -124,6 +125,18 @@ description: "A responsive React weather app showing real-time and 3-hour foreca
     featured: true,
     category: "web app"
   },
+  {
+  id: 4,
+  title: "Sentinel AI",
+  description: "A Streamlit app for detecting activities in surveillance videos using ML models. Supports video upload and runs on Hugging Face Spaces.",
+  image: Project4,
+  tags: ["Streamlit", "Machine Learning", "Hugging Face"],
+  githubUrl: "https://github.com/Ashwin-RH/surveillance-detection",
+  liveUrl: "https://huggingface.co/spaces/Ashwinharagi/surveillance-detection-v2",
+  featured: true,
+  category: "web app"
+}
+
    
 ];
 
