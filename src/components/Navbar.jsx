@@ -73,9 +73,6 @@ const Navbar = () => {
                 <span className='bg-gradient-to-br from-orange-500  to-fuchsia-500 bg-clip-text text-transparent text-xl font-bold'>
                     Portfolio
                 </span>
-                
-
-                
 
             </div>
 

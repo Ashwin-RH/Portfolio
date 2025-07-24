@@ -345,7 +345,7 @@ const HeroSection = () => {
                                         className="text-gray-400 text-left text-3xl font-semibold text-center mb-2 "
                                         >
                                             Hi, I'm 
-                                            <span className="font-bold text-4xl bg-gradient-to-r from-gray-500 to-sky-100 bg-clip-text text-transparent"> Ashwin</span> 
+                                            <span className="font-bold text-4xl bg-gradient-to-l from-violet-200 to-red-200 bg-clip-text text-transparent"> Ashwin</span> 
                                         </motion.div>
                                     {/* <motion.div
                                         variants={textVariants}
