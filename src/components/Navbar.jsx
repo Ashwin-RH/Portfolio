@@ -19,6 +19,7 @@ import {useTheme} from "../context/ThemeContext"
 const Navbar = () => {
     const { scrollYProgress } = useScroll();
 
+
     const { isDarkMode,toggleDarkMode} = useTheme();
     const [isMenuOpen,setIsMenuOpen] = useState(false);
 
@@ -34,7 +35,9 @@ const Navbar = () => {
 
   return (
         <motion.nav
-        style={{opacity:1}}
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1 ,y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 px-4 py-4 rounded-2xl w-[330px]  md:w-[80rem]   ${
             isDarkMode ? "bg-gray-950/50 shadow-xl shadow-blue-500/10" : "bg-gray-900/10"
         } backdrop-blur-xs border-2 ${
