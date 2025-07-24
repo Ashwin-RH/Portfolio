@@ -178,11 +178,18 @@ const HeroSection = () => {
 
                                                 <motion.div
                                                     variants={itemVariants}
-                                                    className="bg-gradient-to-br from-gray-500 to-sky-100 bg-clip-text text-transparent text-2xl font-semibold text-center mb-2 "
+                                                    className={` bg-clip-text text-transparent text-2xl font-semibold text-center mb-2 ${isDarkMode ? "bg-gray-200" : "bg-gradient-to-r from-gray-600 to-gray-800"}`}
                                                     >
                                                         Hi, I'm 
-                                                        <span className="font-bold text-4xl bg-gradient-to-l from-violet-200 to-red-200 bg-clip-text text-transparent"> Ashwin</span> 
+                                                        <span className={`font-bold text-4xl ${isDarkMode ? "bg-gradient-to-l from-violet-200 to-red-200" : "bg-gradient-to-r from-orange-400 to-orange-700"} bg-clip-text text-transparent`}> Ashwin</span> 
                                                     </motion.div>
+                                                    {/* <motion.div
+                                                        variants={itemVariants}
+                                                        className={` text-left text-3xl font-semibold text-center mb-2 ${isDarkMode ? "text-gray-400" : "text-gray-800"}`}
+                                                    >
+                                                        Full Stack Developer
+                                                    </motion.div> */}
+                                        
 
                                                 <motion.h1
                                                     variants={itemVariants}
@@ -342,10 +349,10 @@ const HeroSection = () => {
                                 >
                                     <motion.div
                                         variants={itemVariants}
-                                        className="text-gray-400 text-left text-3xl font-semibold text-center mb-2 "
+                                        className={` text-left text-3xl font-semibold text-center mb-2 ${isDarkMode ? "text-gray-400" : "text-gray-800"}`}
                                         >
                                             Hi, I'm 
-                                            <span className="font-bold text-4xl bg-gradient-to-l from-violet-200 to-red-200 bg-clip-text text-transparent"> Ashwin</span> 
+                                            <span className={`font-bold text-4xl bg-clip-text text-transparent ${isDarkMode ? "bg-gradient-to-l from-violet-200 to-red-200" : "bg-gradient-to-r from-orange-400 to-orange-700"}`}> Ashwin</span> 
                                         </motion.div>
                                     {/* <motion.div
                                         variants={textVariants}
