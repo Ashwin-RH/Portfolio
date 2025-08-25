@@ -5,9 +5,12 @@ import PROFILE_PIC from "../assets/images/profile_pic.jpg";
 import { hover } from "framer-motion";
 
 import Project1 from "/DashBoard.png"
-import Project2 from "../assets/images/project2.png"
-import Project3 from "/weather.png"
-import Project4 from "/sentinel.png";
+import Project2 from "/Dashboard_lead.png"
+import Project3 from "/chatbot.png"
+import Project4 from "../assets/images/project2.png"
+import Project5 from "/weather.png"
+import Project6 from "/sentinel.png";
+
 
 
 export const PROFILE = {
@@ -105,9 +108,31 @@ export const PROJECTS = [
   },
   {
     id:2,
+    title: "Azyn - Mern lead distributor",
+    description: "Azyn is a MERN stack application for managing and distributing leads.",
+    image:Project2,
+    tags: ["React", "Node.js", "MongoDB", "Express"],
+    githubUrl: "https://github.com/Ashwin-RH/mern-lead-distributor",
+    liveUrl: "https://azyn.vercel.app/",
+    featured: true,
+    category:"Full Stack"
+  },
+  {
+  id: 3,
+  title: "Convo AI Assistant",
+  description: "Convo is a modern, secure, and real-time AI chatbot built with Nhost, Hasura, and n8n, showcasing advanced full-stack web development practices.",
+  image: Project3,
+  tags: ["React", "Tailwind", "Nhost", "Hasura", "n8n", "OpenRouter"],
+  githubUrl: "https://github.com/Ashwin-RH/Chatbot", // update with actual repo if available
+  liveUrl: "https://convo-ashwin.netlify.app",
+  featured: true,
+  category: "Full Stack + AI"
+},
+  {
+    id: 4,
     title: "Calculator",
     description: "A modern React-based calculator with a clean Tailwind CSS UI. Supports basic arithmetic and unit conversions like currency, weight, area, speed, and temperature.",
-    image:Project2,
+    image: Project4,
     tags: ["React", "Context API", "Tailwind CSS"],
     githubUrl: "https://github.com/Ashwin-RH/Calculator",
     liveUrl: "https://eval-calci.vercel.app/",
@@ -115,10 +140,10 @@ export const PROJECTS = [
     category:"web app"
   },
   {
-    id: 3,
+    id: 5,
     title: "Veara – Weather App",
 description: "A responsive React weather app showing real-time and 3-hour forecasts using the OpenWeather API, styled with Tailwind and enhanced with toast notifications.",
-    image: Project3,
+    image: Project5,
     tags: ["React", "Tailwind CSS", "OpenWeather API"],
     githubUrl: "https://github.com/Ashwin-RH/weather-app",
     liveUrl: "https://veara.vercel.app/",
@@ -126,10 +151,10 @@ description: "A responsive React weather app showing real-time and 3-hour foreca
     category: "web app"
   },
   {
-  id: 4,
+  id: 6,
   title: "Sentinel AI",
   description: "A Streamlit app for detecting activities in surveillance videos using ML models. Supports video upload and runs on Hugging Face Spaces.",
-  image: Project4,
+  image: Project6,
   tags: ["Streamlit", "Machine Learning", "Hugging Face"],
   githubUrl: "https://github.com/Ashwin-RH/surveillance-detection",
   liveUrl: "https://huggingface.co/spaces/Ashwinharagi/surveillance-detection-v2",
