@@ -83,7 +83,14 @@ export const TECH_STACK = [
   "Tailwind CSS",
   "Framer Motion",
   "Git",
+  "n8n",
+  "Bolt",
+  "Workflow Automation",
+  "Chatbot AI Integration",
+  "API Orchestration",
+  "Event-driven Automation",
 ];
+
 
 // Statistics Section
 export const STATS = [
