@@ -94,7 +94,7 @@ export const TECH_STACK = [
 
 // Statistics Section
 export const STATS = [
-  { number: "3+", label: "Projects completed" },
+  { number: "6+", label: "Projects completed" },
   // { number: "3+", label: "Years experience" },
   { number: "10+", label: "Technologies used" },
   // { number: "100%", label: "Client satisfaction" },
@@ -135,8 +135,49 @@ export const PROJECTS = [
   featured: true,
   category: "Full Stack + AI"
 },
+
   {
-    id: 4,
+  id: 4,
+  title: "Sentinel AI",
+  description: "A Streamlit app for detecting activities in surveillance videos using ML models. Supports video upload and runs on Hugging Face Spaces.",
+  image: Project6,
+  tags: ["Streamlit", "Machine Learning", "Hugging Face"],
+  githubUrl: "https://github.com/Ashwin-RH/surveillance-detection",
+  liveUrl: "https://huggingface.co/spaces/Ashwinharagi/surveillance-detection-v2",
+  featured: true,
+  category: "web app"
+},
+{
+  id: 5,
+  title: "Online Learning Platform",
+  description: "A full-stack learning platform with role-based access, interactive courses, quizzes, video lessons, dashboards, and an admin panel.",
+  //image: Project7, // update with your image import
+  tags: ["Express", "MongoDB", "JWT", "Cloudinary"],
+  githubUrl: "https://github.com/Ashwin-RH/online-learning-platform",  // update your repo URL
+  liveUrl: "https://tatwa.vercel.app/", // update if deployed
+  featured: true,
+  category: "web app",
+},
+{
+  id: 6,
+  title: "Remote Work Collaboration Suite",
+  description:
+    "A unified real-time collaboration platform for documents, video calls, whiteboards, tasks, and chat.",
+  //image: Project8, // replace with your image import
+  tags: [
+    "WebSocket",
+    "WebRTC",
+    "Socket.io",
+    "PostgreSQL",
+    "Redis",
+  ],
+  githubUrl: "https://github.com/Ashwin-RH/remote-collab",
+  liveUrl: "https://remote-collab-suite.vercel.app/", // add your live link
+  featured: true,
+  category: "web app",
+},
+  {
+    id: 7,
     title: "Calculator",
     description: "A modern React-based calculator with a clean Tailwind CSS UI. Supports basic arithmetic and unit conversions like currency, weight, area, speed, and temperature.",
     image: Project4,
@@ -147,7 +188,7 @@ export const PROJECTS = [
     category:"web app"
   },
   {
-    id: 5,
+    id: 8,
     title: "Veara – Weather App",
 description: "A responsive React weather app showing real-time and 3-hour forecasts using the OpenWeather API, styled with Tailwind and enhanced with toast notifications.",
     image: Project5,
@@ -157,19 +198,6 @@ description: "A responsive React weather app showing real-time and 3-hour foreca
     featured: true,
     category: "web app"
   },
-  {
-  id: 6,
-  title: "Sentinel AI",
-  description: "A Streamlit app for detecting activities in surveillance videos using ML models. Supports video upload and runs on Hugging Face Spaces.",
-  image: Project6,
-  tags: ["Streamlit", "Machine Learning", "Hugging Face"],
-  githubUrl: "https://github.com/Ashwin-RH/surveillance-detection",
-  liveUrl: "https://huggingface.co/spaces/Ashwinharagi/surveillance-detection-v2",
-  featured: true,
-  category: "web app"
-}
-
-   
 ];
 
 export const SOCIAL_LINKS = [
